@@ -1,0 +1,16 @@
+<!-- templates/myapp/rubrique_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des rubriques</title>
+</head>
+<body>
+    <h1>Liste des rubriques</h1>
+    <ul>
+        {% for rubrique in rubriques %}
+            <li>{{ rubrique.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

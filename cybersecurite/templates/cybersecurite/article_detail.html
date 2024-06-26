@@ -1,0 +1,19 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style_cybersecurite.css' %}">
+
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    <p>Created at: {{ article.created_at }}</p>
+    <p>By {{ article.author }} </p>
+    <p>Updated at: {{ article.updated_at }}</p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des articles - Cybersécurité</title>
+    <link rel="stylesheet" href="{% static 'css/style_cybersecurite.css' %}">
+
+</head>
+<body>
+    <h1>Liste des articles - Cybersécurité</h1>
+    <div class="article-list">
+        {% for article in articles %}
+            <div class="article">
+                <h2><a href="{% url 'cybersecurite_article_detail' article.id %}">{{ article.title }}</a></h2>
+                <p>{{ article.content|truncatewords:30 }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des articles - Programmation</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Liste des articles - Programmation</h1>
+    </header>
+
+    <div class="article-list">
+        {% for article in articles %}
+            <div class="article">
+                <h2><a href="{% url 'programming_article_detail' article.id %}">{{ article.title }}</a></h2>
+                <p>{{ article.content|truncatewords:30 }}</p>
+                <a href="{% url 'programming_article_detail' article.id %}" class="read-more">Lire l'article</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

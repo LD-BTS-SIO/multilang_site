@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style_programming.css' %}">
+
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p>By {{ article.author }} on {{ article.published_date }}</p>
+    <div>
+        {{ article.content }}
+    </div>
+    <a href="{% url 'programming_article_list' %}">Back to Articles</a>
+</body>
+</html>

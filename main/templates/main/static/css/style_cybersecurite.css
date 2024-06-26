@@ -1,0 +1,64 @@
+/* static/css/style_cybersecurite.css */
+
+/* Styles for body and overall layout */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 20px; /* Adjust as needed */
+}
+
+h1 {
+    color: #990000; /* Red color for headings */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styles for article list */
+.article-list {
+    margin-top: 20px;
+}
+
+.article {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.article h2 a {
+    color: #990000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 10px;
+    border: 1px solid #990000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.article h2 a:hover {
+    background-color: #990000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.article p {
+    color: #666;
+}
+
+/* Styles for footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
