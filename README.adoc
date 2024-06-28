@@ -33,7 +33,7 @@ cd multilang_site
 J'ai ensuite utilisé la commande *django-admin startproject* pour créer un nouveau projet Django nommé *multilang_site*.
 
 
-J'ai ensuite créé l'application main : 
+J'ai ensuite crééé l'application main : 
 
 
 [source,lang]
@@ -42,7 +42,7 @@ python manage.py startapp main
 ----
 
 
-Il faut ensuite ajouter l'Application à settings.py :
+Il fuat ensuite ajouter l'Application à settings.py :
 [source,lang]
 ----
 INSTALLED_APPS = [
@@ -116,3 +116,44 @@ python manage.py migrate
 
 
 En conséquence, je peux ajouter des articles dans :  ajouter des articles : http://127.0.0.1:8000/admin/. qui est l'interface d'administration
+
+
+
+== II) Rendu actuel  du projet :
+
+
+
+
+
+====
+image::assets\images\R1.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R2.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R3.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R4.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R5.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R6.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R7.png"[width=800, title="", alt=""]
+====
+
+====
+image::assets\images\R8.png"[width=800, title="", alt=""]
+====
+
