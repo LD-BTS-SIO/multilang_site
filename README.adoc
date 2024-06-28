@@ -33,7 +33,7 @@ cd multilang_site
 J'ai ensuite utilisé la commande *django-admin startproject* pour créer un nouveau projet Django nommé *multilang_site*.
 
 
-J'ai ensuite crééé l'application main : 
+J'ai ensuite créé l'application main : 
 
 
 [source,lang]
@@ -42,7 +42,7 @@ python manage.py startapp main
 ----
 
 
-Il fuat ensuite ajouter l'Application à settings.py :
+Il faut ensuite ajouter l'Application à settings.py :
 [source,lang]
 ----
 INSTALLED_APPS = [
