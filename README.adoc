@@ -154,8 +154,8 @@ image::assets\images\R7.png"[width=800, title="", alt=""]
 ====
 
 ====
-
-J'ai pour l'instant des difficultés pour l'intégration d'un chatbot ou de traductions
 image::assets\images\R8.png"[width=800, title="", alt=""]
 ====
+
+J'ai pour l'instant des difficultés pour l'intégration d'un chatbot ou de traductions
 
