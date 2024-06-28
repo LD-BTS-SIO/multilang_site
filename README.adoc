@@ -1,4 +1,4 @@
-= Compte rendu pour la création d'une application multilingue sous DJANGO 
+= Compte rendu pour la création d'une application multilingue sous DJANGO (Rubriques avec thèmes pour chaque artcile, chatbot, traductions..)
 
 :toc:
 
