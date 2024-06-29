@@ -119,7 +119,7 @@ python manage.py migrate
 ----
 
 
-En conséquence, je peux ajouter des articles dans :  ajouter des articles : http://127.0.0.1:8000/admin/. qui est l'interface d'administration
+En conséquence, je peux ajouter des articles dans : http://127.0.0.1:8000/admin/. qui est l'interface d'administration
 
 
 
