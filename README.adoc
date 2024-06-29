@@ -89,7 +89,7 @@ urlpatterns = [
 
 
 
-J'ai crééé ensuite des templates, des vues que je mettrai dans la partie finale du projet
+J'ai créé ensuite des templates, des vues que je mettrai dans la partie finale du projet
 
 
 Pour la partie *admin* de Django j'ai créé un superutilisateur: 
