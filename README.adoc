@@ -336,7 +336,7 @@ ERREUR :  aucune distribution  correspondante trouvée pour pywin32==306
 
 == IV) Conclusion
 
-* Je vous remercie tout d'abord de m'avoir proposé ce projet, j'ai pu découvrir les bases de django mais malheureusement j'ai connu de grandes difficultés/
+* Je vous remercie tout d'abord de m'avoir proposé ce projet, j'ai pu découvrir les bases de django mais malheureusement j'ai connu de grandes difficultés
 
 * J'essaierai de le finir pour m'entrainer, c'est une belle idée de projet pour s'entraîner et acquérir des compétences.
 
