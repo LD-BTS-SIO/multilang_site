@@ -1,4 +1,4 @@
-= Compte rendu pour la création d'une application multilingue sous DJANGO (Rubriques avec thèmes pour chaque artcile, chatbot, traductions..)
+= Compte rendu pour la création d'une application multilingue
 
 :toc:
 
@@ -8,6 +8,10 @@ toc::[]
 
 
 === Je tiens à préciser que j'ai fais ce projet sur VS CODE
+
+* Je tiens à vous remercier de m'avoir envoyé ce test, ça m'a permis de prendre en compétence malgré des difficultés.
+* Je pense avoir pris 15 heures au total pour avoir réalisé ceci, ayant des difficultés avec django au départ, je n'ai cependant pas réalisé la traduction et le chatbot nécessaire.
+
 :figure-caption!:
 
 == I) Installation et Configuration de Django :
@@ -157,5 +161,187 @@ image::assets\images\R7.png"[width=800, title="", alt=""]
 image::assets\images\R8.png"[width=800, title="", alt=""]
 ====
 
-J'ai pour l'instant des difficultés pour l'intégration d'un chatbot ou de traductions
+== III) Difficultés chatbot et traduction
 
+Je n'ai malheureusement pas encore réussi à intégrer un chabot et un système de traduction.
+
+Voici les erreurs que je reçois
+
+=== a) Traduction
+
+J'ai dû d'abord configurer *settings.py* de la manière suivante :
+
+
+[source,lang]
+----
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('fr', 'French'),
+    # Ajoutez d'autres langues au besoin
+]
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+----
+
+
+Pour les templates HTML, j'ai dû utiliser *le template tag {% trans %}*.
+
+
+
+J'ai généré ensuite les *fichiers de message/ de traduction* en exécutant la commande suivante à la racine de votre projet:
+
+
+[source,lang]
+----
+
+python manage.py makemessages -l fr   
+ python manage.py makemessages -l en                                                            
+                                                                                                                      
+
+
+----
+
+
+J'ai dû ensuite complier : 
+
+[source,lang]
+----
+django-admin compilemessages
+----
+
+[source,lang]
+----
+J'ai malheuresement les erreurs suivantes: 
+
+PS C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie> python manage.py runserver
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\core\management\commands\runserver.py", line 125, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\utils\autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\core\management\__init__.py", line 394, in execute
+    autoreload.check_errors(django.setup)()
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie\env\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+----
+
+Alors qu'il existe : 
+
+
+[source,lang]
+----
+PS C:\Users\darras\multilang_site - correct B FONCTIONNE B - Copie> pip show djangorestframework                                                                               
+Name: djangorestframework                                                                                                                                                      
+Version: 3.15.2
+Summary: Web APIs for Django, made easy.
+Home-page: https://www.django-rest-framework.org/
+Author: Tom Christie
+Author-email: tom@tomchristie.com
+License: BSD
+Location: c:\users\darras\multilang_site\env\lib\site-packages
+Requires: django
+Required-by:
+
+----
+
+=== b) Chatbot
+
+Pour le chabot je n'ai pas réussi à développer à l'aide d'uen solution gratuite.
+
+
+
+J'ai essayé de publié le projet sur render mais j'ai toujours pas réussi : 
+
+
+[source,lang]
+----
+==> Clonage depuis https://github.com/LD-BTS-SIO/multilang_site   
+==> Extraction du commit 55266c76b8514d3de63e7c6b18c73cd3a559094b dans la branche master       
+==> Utilisation de Python version 3.11.9 (par défaut)     
+==> Docs sur la spécification d'une version Python : https://render.com/docs/python-version       
+==> Utilisation de Poetry version 1.7.1 (par défaut)     
+==> Documentation sur la spécification d'une version de Poetry : https://render.com/docs/poetry-version       
+==> Exécution de la commande de build 'pip install -r conditions.txt'...       
+Collecte  de asgiref==3.8.1  (à partir de  -r  requirements.txt  (ligne  1))
+  Téléchargement de  asgiref-3.8.1-py3-none-any.whl.metadata  (9,3  Ko)
+Collecte  de backoff==2.2.1  (à partir de  -r  requirements.txt  (ligne  2))
+  Téléchargement de  backoff-2.2.1-py3-none-any.whl.metadata  (14  Ko)
+Collecte  de branca==0.7.2  (à partir de  -r  conditions.txt  (ligne  3))
+  Téléchargement de  branca-0.7.2-py3-none-any.whl.metadata  (1,5  Ko)
+Collecte  de certifi==2024.2.2  (à partir de  -r  requirements.txt  (ligne  4))
+  Téléchargement de  certifi-2024.2.2-py3-none-any.whl.metadata  (2,2  Ko)
+Collecte  de charset-normalizer==3.3.2  (à partir de  -r  Requirements.txt  (ligne  5))
+  Téléchargement de  charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata  (33  Ko)
+Collecte  de comtypes==1.1.14  (à partir de  -r  requirements.txt  (ligne  6))
+  Téléchargement  de comtypes-1.1.14-py2.py3-none-any.whl.metadata  (1,6  Ko)
+Collecte  de Django==5.0.6  (à partir de  -r  requirements.txt  (ligne  7))
+  Téléchargement de  Django-5.0.6-py3-none-any.whl.metadata  (4,1  Ko)
+Collecte  de folium==0.16.0  (à partir de  -r  requirements.txt  (ligne  8))
+  Téléchargement  de folium-0.16.0-py2.py3-none-any.whl.metadata  (3,6  Ko)
+Collecte  de idna==3.7  (à partir de  -r  requirements.txt  (ligne  9))
+  Téléchargement de  idna-3.7-py3-none-any.whl.metadata  (9,9  Ko)
+Collecte  de Jinja2==3.1.4  (à partir de  -r  conditions.txt  (ligne  10))
+  Téléchargement de  jinja2-3.1.4-py3-none-any.whl.metadata  (2,6  Ko)
+Collecte  de MarkupSafe==2.1.5  (à partir de  -r  conditions.txt  (ligne  11))
+  Téléchargement de  MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata  (3,0  Ko)
+Collecte  de numpy==1.26.4  (à partir de  -r  conditions.txt  (ligne  12))
+  Téléchargement de  numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata  (61  Ko)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  61,0/61,0  Ko  3,0  Mo/s  depuis  0:00:00
+Collecte  d'opencage==2.4.0  (à partir de  -r  requirements.txt  (ligne  13))
+  Téléchargement  de opencage-2.4.0-py3-none-any.whl.metadata  (5,8  Ko)
+Collecte  des numéros de téléphone ==8.13.37  (à partir de  -r  exigences.txt  (ligne  14))
+  Téléchargement  de phonenumbers-8.13.37-py2.py3-none-any.whl.metadata  (11  Ko)
+Collecte  de PyMuPDF==1.23.21  (à partir de  -r  conditions.txt  (ligne  15))
+  Téléchargement de  PyMuPDF-1.23.21-cp311-none-manylinux2014_x86_64.whl.metadata  (3,4  Ko)
+Collecte  de PyMuPDFb==1.23.9  (à partir de  -r  requirements.txt  (ligne  16))
+  Téléchargement de  PyMuPDFb-1.23.9-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata  (1,3  Ko)
+Collecte  de PyPDF2==3.0.1  (à partir de  -r  requirements.txt  (ligne  17))
+  Téléchargement de  pypdf2-3.0.1-py3-none-any.whl.metadata  (6,8  Ko)
+Collecte  de pypiwin32==223  (à partir de  -r  Requirements.txt  (ligne  18))
+  Téléchargement de  pypiwin32-223-py3-none-any.whl.metadata  (236  octets)
+Collecte  de pyttsx3==2,90  (à partir de  -r  Requirements.txt  (ligne  19))
+  Téléchargement de  pyttsx3-2.90-py3-none-any.whl.metadata  (3,6  Ko)
+ERREUR :  j'ai ignoré  les versions  suivantes qui nécessitent une version différente de Python : 1.21.2 Requires-Python >=3.7,<3.11 ; 1.21.3 Nécessite-Python >=3.7,<3.11 ; 1.21.4 Nécessite-Python >=3.7,<3.11 ; 1.21.5 Nécessite-Python >=3.7,<3.11 ; 1.21.6 Nécessite-Python >=3.7,<3.11                      
+ERREUR :  Impossible  de  trouver  une  version  qui  satisfait  à l'  exigence  pywin32==306  (à partir  des versions :  aucune)
+ERREUR :  aucune distribution  correspondante trouvée pour pywin32==306    
+[avis]  Une  nouvelle  version  de  pip  est  disponible :  24.0  ->  24.1.1
+[avis]  Pour  mettre à jour,  exécutez :  pip  install  --upgrade  pip
+==>  La construction  a échoué  😞
+==> Méthodes courantes pour dépanner votre déploiement : https://docs.render.com/troubleshooting-deploys       
+----
+
+
+== IV) Conclusion
+
+* Je vous remercie tout d'abord de m'avoir proposé ce projet, j'ai pu découvrir les bases de django mais malheureusement j'ai connu de grandes difficultés/
+
+* J'essaierai de le finir pour m'entrainer, c'est une belle idée de projet pour s'entraîner et acquérir des compétences.
+
+* Je vous souhaite une bonne continuation pour votre entreprise.
+
+_Cordialement_,
+
+_Loïc Darras_
